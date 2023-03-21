@@ -5,7 +5,7 @@ var skin = function(color) {
 	if(color == 'default') return;
 	$("head").append($("<link/>", {
 		rel: 'stylesheet',
-		href: 'u-admin/dist/css/skins/' + color + '.css',
+		href: '/static/u-admin/dist/css/skins/' + color + '.css',
 		id: 'skin-css'
 	}));
 }
