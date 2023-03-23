@@ -53,7 +53,7 @@
                                 <nav aria-label="breadcrumb" class="empty-space">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item">
-                                            <a href="/cloud/upload/?fId={{.fId}}" title="刷新"><i
+                                            <a href="/netdisk/upload/?fId={{.fId}}" title="刷新"><i
                                                         class="icon ion-refresh"></i></a>
                                         </li>
                                         <li class="breadcrumb-item active">
@@ -61,7 +61,7 @@
                                                 <span>根目录 &nbsp /</span>
                                             {{else}}
                                                 <span></span>
-                                                <a style="font-weight: bold" href="/cloud/upload">根目录</a>
+                                                <a style="font-weight: bold" href="/netdisk/upload">根目录</a>
                                             {{end}}
 
                                         </li>
@@ -69,7 +69,7 @@
                                         {{range .currentAllParent}}
                                             <li class="breadcrumb-item">
                                                 <a style="font-weight: bold"
-                                                   href="/cloud/upload?fId={{.Id}}&fName={{.FileFolderName}}">
+                                                   href="/netdisk/upload?fId={{.Id}}&fName={{.FileFolderName}}">
                                                     {{.FileFolderName}}
                                                 </a>
                                             </li>
@@ -83,7 +83,7 @@
 
                                         {{if ne .fId 0}}
                                             <li class="breadcrumb-item">
-                                                <a href="/cloud/upload?fId={{.parentFolder.ParentFolderId}}"
+                                                <a href="/netdisk/upload?fId={{.parentFolder.ParentFolderId}}"
                                                    title="返回上一层">
                                                     <i class="icon ion-arrow-return-left"></i>
                                                 </a>
@@ -113,7 +113,7 @@
                                                            class="icon ion-android-folder"></i>
                                                     </td>
                                                     <td>
-                                                        <a href="/cloud/upload?fId={{.Id}}&fName={{.FileFolderName}}" style="font-weight: 700;color: black">
+                                                        <a href="/netdisk/upload?fId={{.Id}}&fName={{.FileFolderName}}" style="font-weight: 700;color: black">
                                                             {{.FileFolderName}}
                                                         </a>
                                                     </td>
