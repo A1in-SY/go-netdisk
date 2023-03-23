@@ -1,13 +1,19 @@
 package main
 
 import (
-	"go-netdisk/model"
+	"go-netdisk/conf"
+	"go-netdisk/mysql"
 	"go-netdisk/redis"
 	"go-netdisk/route"
 )
 
 func main() {
+	conf.LoadConf()
 	redis.SetupRedis()
-	model.SetupDB()
+	mysql.SetupDB()
 	route.SetupRoute()
+
+	defer func() {
+		redis.CloseRedis()
+	}()
 }

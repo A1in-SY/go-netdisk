@@ -2,7 +2,7 @@ package route
 
 import (
 	"go-netdisk/controller"
-	"go-netdisk/util"
+	"go-netdisk/middleware"
 	"log"
 
 	"github.com/gin-gonic/gin"
@@ -19,9 +19,17 @@ func SetupRoute() {
 	r.GET("/error", controller.Error)
 
 	netdisk := r.Group("/netdisk")
-	netdisk.Use(util.CheckLogin())
+	netdisk.Use(middleware.CheckLogin())
 	{
 		netdisk.GET("/index", controller.Index)
+		netdisk.GET("/logout", controller.Logout)
+		netdisk.GET("/help", controller.Help)
+		netdisk.GET("/files", controller.Files)
+		netdisk.GET("/upload", controller.Upload)
+	}
+	{
+		netdisk.POST("/addFolder", controller.AddFileFolder)
+		netdisk.POST("/uploadFile", controller.UploadFile)
 	}
 
 	if err := r.Run(":80"); err != nil {

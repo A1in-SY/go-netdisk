@@ -1,0 +1,14 @@
+mysql:
+  host: 127.0.0.1
+  port: '3306'
+  name: root
+  password: '123456'
+  db: go_netdisk
+redis:
+  host: 43.136.123.97
+  port: '6379'
+  password: 7410852963.Asd
+  db: 0
+  ttl: 14400
+app:
+  upload_location: 'D:/upload'
